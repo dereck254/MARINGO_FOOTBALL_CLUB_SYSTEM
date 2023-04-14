@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <title>Maringo Football Club</title>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{% static "fonts/icomoon/style.css" %}">
+
+  <link rel="stylesheet" href="{% static "css/bootstrap/bootstrap.css" %}">
+  <link rel="stylesheet" href="{% static "css/jquery-ui.css" %}">
+  <link rel="stylesheet" href="{% static "css/owl.carousel.min.css" %}">
+  <link rel="stylesheet" href="{% static "css/owl.theme.default.min.css" %}">
+  <link rel="stylesheet" href="{% static "css/owl.theme.default.min.css" %}">
+
+  <link rel="stylesheet" href="{% static "css/jquery.fancybox.min.css" %}">
+
+  <link rel="stylesheet" href="{% static "css/bootstrap-datepicker.css" %}">
+
+  <link rel="stylesheet" href="{% static "fonts/flaticon/font/flaticon.css" %}">
+
+  <link rel="stylesheet" href="{% static "css/aos.css" %}">
+
+  <link rel="stylesheet" href="{% static "css/style.css" %}">
+  <link rel="stylesheet" href="{% static "css/bootstrap/bootstrap.css" %}">
+</head>
+<body>
+<div class="hero overlay" style="background-image: url('{% static "images/haaland.png" %}')"><div class="container"><div class="row">
+    <div class="col-sm-6" >
+    <form action="/update/{{ d.id }}" method="post" >
+    {% csrf_token %}
+    <h1 style="color: red">Update your info</h1>
+        <label for="idnumber">ID Number:</label>
+    <input type="number" placeholder="ID Number" name="idnumber" value="{{ d.idnumber }}" required> <br>
+    <input type="text" placeholder="Full Name" name="fullname" value="{{ d.fullname }}" required><br>
+    <input type="text" placeholder="Gender" name="gender" value="{{ d.gender }}" required><br>
+    <input type="number" placeholder="Age" name="age" value="{{ d.age }}" required><br>
+    <input type="email" placeholder="Email" name="email" value="{{ d.email }}" required><br>
+    <input type="number" placeholder="Contact" name="contact" value="{{ d.contact }}" required><br>
+    <input type="text" placeholder="County" name="county" value="{{ d.county }}" required><br>
+    <input type="text" placeholder="School/College" name="school" value="{{ d.school }}" required><br>
+    <input type="text" placeholder="Team" name="team" value="{{ d.team }}" required><br>
+    <label for="image">Image:</label>
+    <input type="file" name="photo" accept="image/*" required placeholder="Insert your photo" value="{{ d.photo }}" required><br>
+
+
+
+    <button style="background: yellow"><a href="">Update</a></button>
+</form>
+</div>
+</div>
+</div></div>
+</body>
+</html>
